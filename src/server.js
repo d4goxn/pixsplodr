@@ -13,6 +13,9 @@ app.use( express.static(
 	{ maxage: 1 }
 ));
 
+app.use( require( './article-router' ));
+app.use( require( './error-router' ));
+
 var port = process.env.PORT || 3000;
 
 app.listen( port, function( error ) {

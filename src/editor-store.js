@@ -14,20 +14,20 @@ var EditorStore = module.exports = Reflux.createStore({
 	},
 
 	onCreateArticleFromOriginalImage: function( req ) {
-		this.onSendUpdate( req );
+		this.waitOnUpdate( req );
 	},
 
 	onUpdateOriginalImage: function( req ) {
-		this.onSendUpdate( req );
+		this.waitOnUpdate( req );
 	},
 
-	onSendUpdate: function( req ) {
+	waitOnUpdate: function( req ) {
 		var self = this;
 
 		req.then( function( res ) {
 			console.log( 'sent update, got res' );
 
-			if( res.status == 200 ){
+			if( res.ok() ){
 				this.article = _.extend( this.article || {}, res.body ); // Create or extend our article with the returned article
 				return self.trigger({
 					article: res.body
