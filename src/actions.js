@@ -13,9 +13,9 @@ var actions = module.exports = {
 		children: [ 'progressed' ],
 		preEmit: function( blob ) {
 			return request({
-				method: 'push',
+				method: 'post',
 				url: '/article',
-				body: { 'originalImage': blob }
+				body: request.form({ 'originalImage': blob })
 			});
 		}
 	}),
@@ -27,7 +27,7 @@ var actions = module.exports = {
 			return request({
 				method: 'put',
 				url: '/' + articleSlug,
-				body: { 'originalImage': blob }
+				body: request.form({ 'originalImage': blob })
 			});
 		}
 	}),

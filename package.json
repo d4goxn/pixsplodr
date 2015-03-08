@@ -12,6 +12,7 @@
     "busboy": "^0.2.9",
     "compression": "^1.4.1",
     "express": "^4.12.2",
+    "lodash": "^3.4.0",
     "morgan": "^1.5.1",
     "popsicle": "^0.4.0",
     "react": "^0.12.2",
