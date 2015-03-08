@@ -1,3 +1,6 @@
-var React = require( 'react' );
+'use strict';
 
-React.render( <h1>pixsplodr</h1>, document.getElementById( 'app-root' ));
+var React = require( 'react' );
+var App = require( './app' );
+
+React.render( <App />, document.getElementById( 'app-root' ));
